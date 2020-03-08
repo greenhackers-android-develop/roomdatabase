@@ -12,8 +12,9 @@ class NoteAdapter(
     //for delete on item click
     private val on_delete:(vh:NoteHolder,position:Int)->Unit,
     //for edit note
-    private val on_edit:(vh:NoteHolder,position:Int)->Unit
-
+    private val on_edit:(vh:NoteHolder,position:Int)->Unit,
+    //for long cllick
+    private val on_long_click:(vh:NoteHolder,position:Int)->Unit
 
 
 ) : RecyclerView.Adapter<NoteAdapter.NoteHolder>() {
@@ -38,6 +39,10 @@ class NoteAdapter(
             tvDate.text = note.save_time
             itemView.iv_delete.setOnClickListener { on_delete(holder,position) }
             itemView.iv_edit.setOnClickListener { on_edit(holder,position) }
+            itemView.setOnLongClickListener {
+                on_long_click(holder,position)
+                true
+            }
         }
     }
 

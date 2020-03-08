@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_add) {
-            startActivity(Intent(this@MainActivity, AddActivity::class.java))
+            val i = Intent(this@MainActivity, AddActivity::class.java)
+            i.putExtra("edit",false)
+            startActivity(i)
         }
         return super.onOptionsItemSelected(item)
     }
@@ -59,6 +61,25 @@ class MainActivity : AppCompatActivity() {
                     },
                     { vh, p ->
                         //edit
+                        val i = Intent(this@MainActivity,AddActivity::class.java)
+                        i.putExtra("edit",true)
+                        i.putExtra("id",vh.id)
+                        i.putExtra("title",vh.title)
+                        i.putExtra("desc",vh.desc)
+                        startActivity(i)
+
+                    },{
+                        vh,p->
+                        val dia = AlertDialog.Builder(this@MainActivity)
+                        dia.setTitle("Are you sure?")
+                        dia.setPositiveButton("Ok") { _, _ ->
+                            val note = Note(vh.id!!, vh.title, vh.desc, vh.date!!)
+                            deleteNote(note)
+                        }
+                        dia.setNegativeButton("Cancel") { _, _ ->
+
+                        }
+                        dia.create().show()
                     })
                 recyclerView.layoutManager = LinearLayoutManager(applicationContext)
                 recyclerView.adapter = noteAdapter
