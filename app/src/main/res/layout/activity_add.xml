@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="15"
+        android:inputType="textPersonName"
+        android:hint="Enter Your Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="15"
+        android:inputType="textMultiLine"
+        android:hint="Descriptioin"
+        app:layout_constraintEnd_toEndOf="@+id/et_title"
+        app:layout_constraintStart_toStartOf="@+id/et_title"
+        app:layout_constraintTop_toBottomOf="@+id/et_title" />
+
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_width="75dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Add"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/et_desc"
+        app:layout_constraintTop_toBottomOf="@+id/et_desc" />
+
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="75dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Cancel"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/bt_add"
+        app:layout_constraintTop_toTopOf="@+id/bt_add" />
+</androidx.constraintlayout.widget.ConstraintLayout>

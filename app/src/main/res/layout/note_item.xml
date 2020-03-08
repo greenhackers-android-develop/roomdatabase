@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:padding="5dp"
+        android:maxLength="19"
+        style="@android:style/TextAppearance.Material.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="အမှတ်တရတစ်ခု" />
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:src="@drawable/delete"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_width="40dp"
+        android:padding="10dp"
+        android:tint="#ff0000"
+        android:layout_height="40dp"/>
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:src="@drawable/edit"
+        android:layout_toLeftOf="@+id/iv_delete"
+        android:layout_width="40dp"
+        android:padding="10dp"
+        android:tint="#0000ff"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_below="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="ဒီနေ့ဘာလုပ်စရာရှိသေးလဲ" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:textAlignment="textEnd"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/tv_desc"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7.6.2020 4:50:56:897" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/tv_date"
+        android:background="@android:color/black"/>
+</RelativeLayout>
